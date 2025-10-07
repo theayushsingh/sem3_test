@@ -1,0 +1,17 @@
+public class LostSoldier{
+    public static void main(String[] args){
+        int n = 5;
+        int[] arr = {0, 1, 2, 4, 5};
+        int missing = findMissingSoldier(arr, n);
+        System.out.println(missing);
+    }
+
+    public static int findMissingSoldier(int[] arr, int n){
+        int expectedSum = n*(n+1)/2;
+        int actualSum = 0;
+        for(int num : arr){
+            actualSum += num;
+        }
+        return expectedSum - actualSum;
+    }
+}
